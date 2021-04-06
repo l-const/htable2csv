@@ -3,6 +3,9 @@ name = "htable2csv"
 version = "0.1.0"
 authors = ["l-const <const-l@outlook.com>"]
 edition = "2018"
+license = "MIT"
+repository = "https://github.com/l-const/htable2csv"
+description = "Convert and parse HTML tables to .csv files."
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
