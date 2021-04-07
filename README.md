@@ -7,7 +7,7 @@ contained as .csv files.
 
 
 ```bash
-cargo run https://www.w3schools.com/html/html_tables/asp
+cargo run https://www.w3schools.com/html/html_tables.asp
 ```
 
  Install (from crates.io)
@@ -19,5 +19,5 @@ cargo install htable2csv
  Run 
 
 ```bash
-htable2csv https://www.w3schools.com/html/html_tables/asp
+htable2csv https://www.w3schools.com/html/html_tables.asp
 ```
