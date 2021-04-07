@@ -2,7 +2,7 @@
 Convert HTML table to .csv file
 
 ###
-Program accepts an http uri and downloads HTML tables 
+Program accepts a http uri and downloads HTML tables 
 contained as .csv files.
 
 
