@@ -1,6 +1,6 @@
 [package]
 name = "htable2csv"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["l-const <const-l@outlook.com>"]
 edition = "2018"
 license = "MIT"
@@ -12,3 +12,4 @@ description = "Convert and parse HTML tables to .csv files."
 [dependencies]
 isahc = "1.2.0"
 nipper = "0.1.9"
+clap = "2.33.3"
