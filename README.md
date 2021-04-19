@@ -1,5 +1,5 @@
 # htable2csv
-Convert HTML table to .csv file.
+Convert an HTML table to a .csv file.
 
 ###
 Program accepts an http uri and downloads HTML tables 
