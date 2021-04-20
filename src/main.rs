@@ -94,7 +94,6 @@ fn main() {
                 .help("File prefix for the output files for each table. (Optional)"),
         )
         .get_matches();
-    // get_page(page);
     let cli_opts = CliOpts {
         page : matches.value_of("uri").unwrap(),
         out_dir : matches.value_of("out_dir").unwrap_or("./"),
