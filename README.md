@@ -1,4 +1,7 @@
 # htable2csv
+
+![Crates.io](https://img.shields.io/crates/v/htable2csv)
+
 Convert an HTML table to a .csv file.
 
 ###
