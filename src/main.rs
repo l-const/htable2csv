@@ -58,7 +58,7 @@ fn write_to_file(pos: usize, table: Table, cli_opts: &CliOpts) -> std::io::Resul
         }
     }
 
-    buffer.flush()?;
+    buffer.flush().expect("Error writing file!");
     Ok(())
 }
 
