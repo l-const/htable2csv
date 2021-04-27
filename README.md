@@ -8,13 +8,6 @@ Scrape HTML tables to .csv files.
 Program accepts an http uri and downloads HTML tables 
 contained as .csv files.
 
-
-
-
-```bash
-cargo run https://www.w3schools.com/html/html_tables.asp
-```
-
  Install (from crates.io)
 
 ```bash
