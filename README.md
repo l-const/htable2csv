@@ -2,7 +2,7 @@
 
 ![Crates.io](https://img.shields.io/crates/v/htable2csv)
 
-Scrape HTML tables to .csv files.
+Scrape HTML tables to .csv files, from your terminal.
 
 #### Description: 
 Program accepts an http uri and downloads HTML tables 
