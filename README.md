@@ -4,7 +4,7 @@
 
 Scrape HTML tables to .csv files.
 
-###
+#### Description: 
 Program accepts an http uri and downloads HTML tables 
 contained as .csv files.
 
