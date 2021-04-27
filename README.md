@@ -1,6 +1,7 @@
 # htable2csv
 
 ![Crates.io](https://img.shields.io/crates/v/htable2csv)
+
 Scrape HTML tables to .csv files.
 
 ###
