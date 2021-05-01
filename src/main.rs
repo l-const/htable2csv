@@ -1,6 +1,3 @@
-extern crate clap;
-extern crate isahc;
-extern crate nipper;
 
 use clap::{App, Arg};
 use isahc::prelude::*;
@@ -68,7 +65,7 @@ fn get_page(cli_opts: CliOpts) {
         let document = Document::from(&body);
         parse_document(document, cli_opts)
     } else {
-        println!("Error geting response body!");
+        eprintln!("Error geting response body!");
     }
 }
 
