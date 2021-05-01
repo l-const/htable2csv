@@ -45,11 +45,27 @@ fn write_to_file(pos: usize, table: Table, cli_opts: &CliOpts) -> std::io::Resul
     for row in table {
         for item in row {
             let nodes: Vec<_> = item.split('\n').collect();
-            let nodes: Vec<_> = nodes
+            let mut nodes: Vec<_> = nodes
                 .iter()
                 .map(|&str_r| str_r.trim().to_string())
                 .collect();
+            // handling the thousands problem 10,230,340 number
+            nodes = nodes.into_iter().map(|node|  { 
+                let vec_str : Vec<&str> = node.matches(char::is_numeric).collect();
+                if node.contains(",")  && vec_str.len() > 0
+                 { 
+                     format!("\"{}\"", node) 
+                }
+                  else {
+                       node 
+                    }
+                })
+                  .collect();
             let mut line_to_write = nodes.join(",");
+
+            line_to_write = line_to_write.replace(",,", ",");
+            line_to_write = line_to_write.replace(",,,", ",");
+            line_to_write = line_to_write.replace(",,,,", ",");
             line_to_write.push_str("\n");
             buffer.write(line_to_write.as_bytes())?;
         }
