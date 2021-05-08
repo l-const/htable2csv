@@ -1,4 +1,3 @@
-
 use clap::{App, Arg};
 use isahc::prelude::*;
 use nipper::Document;
@@ -15,7 +14,6 @@ struct CliOpts<'cli_input> {
     out_dir: &'cli_input str,
     prefix: &'cli_input str,
 }
-
 
 fn parse_document(doc: Document, cli_opts: CliOpts) {
     let selected_table_iter: Vec<_> = doc.select("table").iter().collect();
@@ -39,7 +37,7 @@ fn parse_table(pos: usize, sel: Selection, cli_opts: &CliOpts) {
 }
 
 fn write_to_file(pos: usize, table: Table, cli_opts: &CliOpts) -> std::io::Result<()> {
-    let filename = format!("{}{}{}.csv", cli_opts.out_dir, cli_opts.prefix , pos);
+    let filename = format!("{}{}{}.csv", cli_opts.out_dir, cli_opts.prefix, pos);
     let file = File::create(&filename).expect("Couldn't create file!");
     let mut buffer = BufWriter::new(file);
     for row in table {
@@ -50,22 +48,18 @@ fn write_to_file(pos: usize, table: Table, cli_opts: &CliOpts) -> std::io::Resul
                 .map(|&str_r| str_r.trim().to_string())
                 .collect();
             // handling the thousands problem 10,230,340 number
-            nodes = nodes.into_iter().map(|node|  { 
-                let vec_str : Vec<&str> = node.matches(char::is_numeric).collect();
-                if node.contains(",")  && vec_str.len() > 0
-                 { 
-                     format!("\"{}\"", node) 
-                }
-                  else {
-                       node 
+            nodes = nodes
+                .into_iter()
+                .map(|node| {
+                    let vec_str: Vec<&str> = node.matches(char::is_numeric).collect();
+                    if node.contains(",") && vec_str.len() > 0 {
+                        format!("\"{}\"", node)
+                    } else {
+                        node
                     }
                 })
-                  .collect();
+                .collect();
             let mut line_to_write = nodes.join(",");
-
-            line_to_write = line_to_write.replace(",,", ",");
-            line_to_write = line_to_write.replace(",,,", ",");
-            line_to_write = line_to_write.replace(",,,,", ",");
             line_to_write.push_str("\n");
             buffer.write(line_to_write.as_bytes())?;
         }
@@ -108,9 +102,9 @@ fn main() {
         )
         .get_matches();
     let cli_opts = CliOpts {
-        page : matches.value_of("uri").unwrap(),
-        out_dir : matches.value_of("out_dir").unwrap_or("./"),
-        prefix : matches.value_of("prefix").unwrap_or("out")
+        page: matches.value_of("uri").unwrap(),
+        out_dir: matches.value_of("out_dir").unwrap_or("./"),
+        prefix: matches.value_of("prefix").unwrap_or("out"),
     };
     get_page(cli_opts);
 }
