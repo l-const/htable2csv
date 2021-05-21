@@ -5,7 +5,7 @@
 Scrape HTML tables to .csv files, from your terminal.
 
 #### Description: 
-Program accepts an http uri and downloads HTML tables 
+Program accepts an http url and downloads HTML tables 
 contained as .csv files.
 
  Install (from crates.io)
